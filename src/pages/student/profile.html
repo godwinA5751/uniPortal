@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student-Portal</title>
+  <link rel="stylesheet" href="/src/pages/student/studentCSS/profile.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo-container">
+        <a href="/src/pages/student/dashboard.html">
+          <div class="university-logo">U</div>
+        </a>
+        <div class="logo-text">Uni<span>Portal</span></div>
+      </div>
+      <div class="menu">
+        <ul class="nav__menu">
+          <li><a href="/src/pages/student/dashboard.html">DashBoard</a></li>
+          <li><a href="/src/pages/student/profile.html">Profile</a></li>
+          <li class="last-child"><a href="/src/pages/student/result.html">Results</a></li>
+        </ul>
+        <button class="hamburger">&#9776;</button>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="users-dashboard"></div>
+    <div class="users-profile">
+      <div class="profile">
+        <div class="image-details">
+          <div class="profile-image">
+            <img class="image" src="default.jpg" alt="profile">
+          </div>
+          <div class="image-name">
+            <p class="name">Godwin Augustine Chinedu</p>
+            <p class="id">23/08/08/0073</p>
+          </div>
+        </div>
+        <div class="profile-info">
+          <p><span>Phone: </span><span class="Phone details"></span></p>
+          <p><span>Program: </span><span class="details"></span></p>
+          <p><span>Registration Date: </span><span class="details"></span></p>
+          <p><span>ID Number: </span><span class="details"></span></p>
+        </div>
+        <button class="update-bio-data">Update Bio Data</button>
+      </div>
+      <div class="line"></div>
+      <div class="bio-data">
+        <div class="bio-data-result"></div>
+      </div>
+    </div>
+    <div class="updateprofile">
+      <h3 align="center">Fill all field</h3>
+      <form action="#">
+        <div class="input-field">
+          <input type="file" id="file" accept="image/*">
+          <label for="file">Profile Picture</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="ID" placeholder=" ">
+          <label for="ID">Student ID</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="surname" placeholder=" ">
+          <label for="surname">Surname</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="firstname" placeholder=" ">
+          <label for="firstname">First Name</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="othername" placeholder=" ">
+          <label for="othername">Other Name</label>
+        </div>
+        <div class="input-field">
+          <select id="gender" required>
+            <option value=""></option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+          <label for="gender" class="select">Gender</label>
+        </div>
+        <div class="input-field">
+          <label for="dob" class="select-dob">Date of Birth</label>
+          <input type="date" id="dob">
+        </div>
+        <div class="input-field">
+          <input type="text" id="country" placeholder=" ">
+          <label for="country">Country</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="origin" placeholder=" ">
+          <label for="origin">State of Origin</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="lga" placeholder=" ">
+          <label for="lga">LGA of Origin</label>
+        </div>
+        <div class="input-field">
+          <select id="martStatus" required>
+            <option value=""></option>
+            <option value="Single">Single</option>
+            <option value="Married">Married</option>
+            <option value="Divorced">Divorced</option>
+            <option value="Widowed">Widowed</option>
+          </select>
+          <label for="martStatus" class="select">Marital Status</label>
+        </div>
+        <div class="input-field">
+          <select id="religion" required>
+            <option value=""></option>
+            <option value="Christainity">Christainity</option>
+            <option value="Islam">Islam</option>
+            <option value="Others">Others</option>
+          </select>
+          <label for="religion" class="select">Religion</label>
+        </div>
+        <div class="input-field">
+          <select id="blood" required>
+            <option value=""></option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+          </select>
+          <label for="blood" class="select">Blood Group</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="genotype" placeholder=" ">
+          <label for="genotype">Genotype</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="home" placeholder=" ">
+          <label for="home">Home Address</label>
+        </div>
+        <div class="input-field">
+          <input type="text" inputmode="numeric" id="contact" placeholder=" ">
+          <label for="contact">Contact</label>
+        </div>
+        <button class="update">update Profile</button>
+      </form>
+    </div>
+
+    <div class="users-result"></div>
+  </main>
+  <footer>
+    <p>&copy; 2005</p>
+  </footer>
+  <script type="module" src="/src/js/students/main.js"></script>
+  <script src="/src/pages/student/studentJS/profile.js"></script>
+</body>
+
+</html>

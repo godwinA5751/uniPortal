@@ -1,0 +1,105 @@
+:root {
+  --blue: #1a3a7a;
+  --light-blue: #4da3ff;
+  --bg-light: #e8f1ff;
+}
+
+body {
+  background: var(--bg-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.login-container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(26, 58, 122, 0.3);
+  width: 300px;
+  text-align: center;
+}
+
+.login-container h2 {
+  color: var(--blue);
+  margin-bottom: 20px;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.input-field label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-field input {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid var(--light-blue);
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: var(--blue);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: var(--light-blue);
+}
+
+#login-error {
+  color: red;
+  margin-top: 10px;
+}
+
+
+
+header {
+  background: var(--blue);
+  padding: 15px;
+  text-align: center;
+  color: white;
+}
+
+.cards {
+  width: 90%;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-left: 5px solid var(--light-blue);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(26, 58, 122, 0.2);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card h4 {
+  color: var(--blue);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(26, 58, 122, 0.3);
+  border-left-color: var(--blue);
+}
+
+a { text-decoration: none; }

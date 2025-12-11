@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+:root {
+  --blue: #1a3a7a;
+  --light-blue: #4da3ff;
+  --bg-light: #e8f1ff;
+  --white: #ffffff;
+  --transition: all 0.3s ease;
+}
+
+body {
+  background: var(--bg-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(26, 58, 122, 0.3);
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  color: var(--blue);
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--blue);
+  border-radius: 5px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.login-container button:hover {
+  background: var(--light-blue);
+}
+
+#error-msg {
+  color: red;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}

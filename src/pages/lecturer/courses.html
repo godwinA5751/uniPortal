@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assigned Courses</title>
+  <link rel="stylesheet" href="/src/pages/lecturer/lecturer.css">
+</head>
+<body>
+  <header>
+    <h2>Assigned Courses</h2>
+  </header>
+
+  <main>
+    <ul id="course-list"></ul>
+  </main>
+
+  <script>
+    if (localStorage.getItem("lecturerLoggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+
+    const courses = ["Math 101", "English 201", "CS 301"];
+    const courseList = document.getElementById("course-list");
+    courses.forEach(course => {
+      const li = document.createElement("li");
+      li.textContent = course;
+      li.style.padding = "10px";
+      li.style.borderBottom = "1px solid #ddd";
+      courseList.appendChild(li);
+    });
+  </script>
+</body>
+</html>

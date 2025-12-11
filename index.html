@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Portal | Student Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="container header-container">
+      <div class="logo-container">
+        <div class="university-logo">U</div>
+        <div class="logo-text">Uni<span>Portal</span></div>
+      </div>
+
+
+
+      <nav>
+        <ul id="mainNav">
+          <li><a href="/index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+          <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <h1>University Student Portal</h1>
+      <p>Access your student dashboard, view academic information, and manage your university profile</p>
+    </div>
+  </section>
+
+  <!-- Student Login Section -->
+  <!-- Login Section -->
+  <section class="view">
+    <div class="image"><img src="./src/images/uniimage.jpg" alt=""></div>
+  </section>
+
+  <!-- Simple Dashboard Cards -->
+  <section class="dashboards">
+    <div class="container">
+      <div class="dashboard-cards">
+        <!-- Student Dashboard Card -->
+        <div class="dashboard-card">
+          <div class="dashboard-icon">
+            <i class="fas fa-user-graduate"></i>
+          </div>
+          <h3>Student Dashboard</h3>
+          <p>Access your courses, grades, assignments, and academic information.</p>
+          <a href="/src/pages/student/student-login.html" style="color: var(--accent-blue); font-weight: 600;">Login
+            Here</a>
+        </div>
+
+        <!-- Lecturer Dashboard Card -->
+        <div class="dashboard-card" id="lecturer-dashboard">
+          <div class="dashboard-icon">
+            <i class="fas fa-chalkboard-teacher"></i>
+          </div>
+          <h3>Lecturer Dashboard</h3>
+          <p>For lecturers to manage courses, students, and academic materials.</p>
+          <p style="color: var(--university-blue); font-weight: 600;">Contact admin for access</p>
+          <a href="/src/pages/lecturer/login.html" style="color: var(--accent-blue); font-weight: 600;">Login Here</a>
+        </div>
+
+        <!-- Admin Dashboard Card -->
+        <div class="dashboard-card" id="admin">
+          <div class="dashboard-icon">
+            <i class="fas fa-user-shield"></i>
+          </div>
+          <h3>Admin Dashboard</h3>
+          <p>For university administrators to manage the system and users.</p>
+          <p style="color: var(--university-blue); font-weight: 600;">Restricted access</p>
+          <a href="/src/pages/admin/admin-login.html" style="color: var(--accent-blue); font-weight: 600;"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <h2>About University Portal</h2>
+        <p>This portal provides students with access to their academic information, course materials, and university
+          resources.</p>
+        <p>Simply login with your student credentials to access your personalized dashboard.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-content">
+        <h2>Contact University IT Support</h2>
+        <p>Need help with the portal? Contact our IT support team for assistance.</p>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>(+234)9133468121</div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>support@university.edu</div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>IT Support Office, Main Building</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <h3 style="margin-bottom: 15px; color: var(--university-gold);">University Portal</h3>
+        <p style="opacity: 0.8; margin-bottom: 20px;">Student management and academic portal</p>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="project.php">Home</a></li>
+        <li><a href="about_us.php">About</a></li>
+        <li><a href="admin.php">Admin</a></li>
+        <li><a href="contact_us.php">Contact</a></li>
+        <li><a href="student_dashboard.php">Student Dashboard</a></li>
+        <li><a href="lecturer_dashboard.php">Lecturer Dashboard</a></li>
+        <li><a href="logout.php">Logout</a></li>
+      </ul>
+
+      <div class="copyright">
+        <p>&copy; 2023 University Portal. For student use only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./main.js"></script>
+</body>
+
+</html>

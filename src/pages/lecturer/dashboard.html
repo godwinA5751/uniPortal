@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecturer Dashboard</title>
+  <link rel="stylesheet" href="/src/pages/lecturer/lecturer.css">
+</head>
+
+<body>
+  <header>
+    <h2>Lecturer Dashboard</h2>
+    <button class="logout-btn">Logout</button>
+  </header>
+
+  <main>
+    <section class="cards">
+      <a href="courses.html">
+        <div class="card">
+          <h4>Assigned Courses</h4>
+          <p>View all assigned courses.</p>
+        </div>
+      </a>
+
+      <a href="upload.html">
+        <div class="card">
+          <h4>Upload Scores</h4>
+          <p>Upload student scores.</p>
+        </div>
+      </a>
+
+      <a href="edit.html">
+        <div class="card">
+          <h4>Edit Results</h4>
+          <p>Edit previously uploaded student scores.</p>
+        </div>
+      </a>
+    </section>
+  </main>
+
+  <script>
+    // Redirect to login if not logged in
+    if (localStorage.getItem("lecturerLoggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+    // ------------------------
+    // LOGOUT FUNCTION
+    // ------------------------
+    function logoutHandler() {
+      // Clear all session storage keys
+      sessionStorage.removeItem("lecturerLoggedIn");
+
+      // Redirect to a default login page
+      window.location.href = "login.html"; // or your generic login page
+    }
+
+    // ------------------------
+    // OPTIONAL: Attach logout to any button
+    // ------------------------
+    const logoutBtn = document.querySelector(".logout-btn");
+    if (logoutBtn) {
+      logoutBtn.addEventListener("click", logoutHandler);
+    }
+  </script>
+</body>
+
+</html>

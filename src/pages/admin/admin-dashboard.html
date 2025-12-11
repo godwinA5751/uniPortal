@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+  <header>
+    <h2>Admin Panel</h2>
+    <button class="logout-btn">Logout</button>
+  </header>
+
+  <nav>
+    <a href="#students">Manage Students</a> |
+    <a href="#lecturers">Manage Lecturers</a> |
+    <a href="#departments">Departments & Programs</a> |
+    <a href="#sessions">Sessions & Semesters</a> |
+    <a href="#courses">Courses</a> |
+    <a href="#activities">Activity Slots</a> |
+    <a href="#publish">Publish Results</a>
+  </nav>
+
+  <main>
+
+    <!-- 1. Manage Students -->
+    <section id="students">
+      <h3>Manage Students</h3>
+      <form id="studentForm">
+        <input type="text" id="studentName" placeholder="Student Name" required>
+        <input type="text" id="studentID" placeholder="Student ID" required>
+        <input type="text" id="studentDept" placeholder="Department" required>
+        <button type="submit">Add Student</button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Department</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="studentsTable"></tbody>
+      </table>
+    </section>
+
+    <!-- 2. Manage Lecturers -->
+    <section id="lecturers">
+      <h3>Manage Lecturers</h3>
+      <form id="lecturerForm">
+        <input type="text" id="lecturerName" placeholder="Lecturer Name" required>
+        <input type="text" id="lecturerID" placeholder="Lecturer ID" required>
+        <input type="text" id="lecturerDept" placeholder="Department" required>
+        <button type="submit">Add Lecturer</button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Department</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="lecturersTable"></tbody>
+      </table>
+    </section>
+
+    <!-- 3. Departments & Programs -->
+    <section id="departments">
+      <h3>Departments & Programs</h3>
+      <form id="departmentForm">
+        <input type="text" id="deptName" placeholder="Department Name" required>
+        <input type="text" id="programName" placeholder="Program Name" required>
+        <button type="submit">Add Department</button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Department</th>
+            <th>Program</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="departmentsTable"></tbody>
+      </table>
+    </section>
+
+    <!-- 4. Sessions & Semesters -->
+    <section id="sessions">
+      <h3>Sessions & Semesters</h3>
+      <form id="sessionForm">
+        <input type="text" id="session" placeholder="Session" required>
+        <input type="text" id="semester" placeholder="Semester" required>
+        <button type="submit">Add Session</button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Session</th>
+            <th>Semester</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="sessionsTable"></tbody>
+      </table>
+    </section>
+
+    <!-- 5. Courses -->
+    <section id="courses">
+      <h3>Manage Courses</h3>
+      <form id="courseForm">
+        <input type="text" id="courseName" placeholder="Course Name" required>
+        <input type="text" id="courseCode" placeholder="Course Code" required>
+        <input type="text" id="courseDept" placeholder="Department" required>
+        <button type="submit">Add Course</button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Course Name</th>
+            <th>Course Code</th>
+            <th>Department</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="coursesTable"></tbody>
+      </table>
+    </section>
+
+    <!-- 6. Activity Slots -->
+    <section id="activities">
+      <h3>Activity Slots</h3>
+      <form id="activityForm">
+        <input type="text" id="activityName" placeholder="Activity Name" required>
+        <input type="text" id="activityTime" placeholder="Time Slot" required>
+        <button type="submit">Add Activity</button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Activity</th>
+            <th>Time Slot</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="activitiesTable"></tbody>
+      </table>
+    </section>
+
+    <!-- 7. Publish Results -->
+    <section id="publish">
+      <h3>Publish Results</h3>
+      <form id="publishForm">
+        <input type="text" id="publishCourse" placeholder="Course Code" required>
+        <input type="text" id="publishSession" placeholder="Session" required>
+        <button type="submit">Publish</button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Session</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="publishTable"></tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <script src="admin.js"></script>
+  <script>
+    // Initialize forms and tables
+    handleFormSubmit("studentForm", "students", ["studentName", "studentID", "studentDept"], "studentsTable");
+    renderTable("students", "studentsTable", ["studentName", "studentID", "studentDept"]);
+
+    handleFormSubmit("lecturerForm", "lecturers", ["lecturerName", "lecturerID", "lecturerDept"], "lecturersTable");
+    renderTable("lecturers", "lecturersTable", ["lecturerName", "lecturerID", "lecturerDept"]);
+
+    handleFormSubmit("departmentForm", "departments", ["deptName", "programName"], "departmentsTable");
+    renderTable("departments", "departmentsTable", ["deptName", "programName"]);
+
+    handleFormSubmit("sessionForm", "sessions", ["session", "semester"], "sessionsTable");
+    renderTable("sessions", "sessionsTable", ["session", "semester"]);
+
+    handleFormSubmit("courseForm", "courses", ["courseName", "courseCode", "courseDept"], "coursesTable");
+    renderTable("courses", "coursesTable", ["courseName", "courseCode", "courseDept"]);
+
+    handleFormSubmit("activityForm", "activities", ["activityName", "activityTime"], "activitiesTable");
+    renderTable("activities", "activitiesTable", ["activityName", "activityTime"]);
+
+    handleFormSubmit("publishForm", "published", ["publishCourse", "publishSession"], "publishTable");
+    renderTable("published", "publishTable", ["publishCourse", "publishSession"]);
+
+    // ------------------------
+    // LOGOUT FUNCTION
+    // ------------------------
+    function logoutHandler() {
+      // Clear all session storage keys
+      sessionStorage.removeItem("adminLoggedIn");
+
+      // Redirect to a default login page
+      window.location.href = "admin-login.html"; // or your generic login page
+    }
+
+    // ------------------------
+    // OPTIONAL: Attach logout to any button
+    // ------------------------
+    const logoutBtn = document.querySelector(".logout-btn");
+    if (logoutBtn) {
+      logoutBtn.addEventListener("click", logoutHandler);
+    }
+  </script>
+
+</body>
+
+</html>

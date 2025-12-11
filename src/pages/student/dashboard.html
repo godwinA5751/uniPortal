@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="/src/pages/student/studentCSS/dashboard.css">
+</head>
+<body>
+
+  <header>
+    <h2>Student Dashboard</h2>
+    <button class="logout-btn">Logout</button>
+  </header>
+
+  <main>
+    <section class="top-section">
+      <div class="welcome-box">
+        <h3>Welcome, Student</h3>
+        <p>Your academic overview is displayed below.</p>
+      </div>
+    </section>
+
+    <section class="cards">
+      <a href="/src/pages/student/profile.html">
+        <div class="card">
+        <h4>Profile</h4>
+        <p>View and update your profile details.</p>
+      </div>
+      </a>
+
+      <a href="/src/pages/student/result.html">
+        <div class="card">
+        <h4>Results</h4>
+        <p>Check your academic performance.</p>
+      </div>
+      </a>
+
+      <div class="card">
+        <h4>Courses</h4>
+        <p>See the list of registered courses.</p>
+      </div>
+
+      <div class="card">
+        <h4>Payments</h4>
+        <p>View your payment history.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="/src/js/students/main.js"></script>
+
+</body>
+</html>
