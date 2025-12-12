@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Dashboard</title>
   <link rel="stylesheet" href="/src/pages/student/studentCSS/dashboard.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
   <header>
     <h2>Student Dashboard</h2>
-    <button class="logout-btn">Logout</button>
+    <button class="logout-btn"><span>Logout</span><i class="material-icons">logout</i></button>
   </header>
 
   <main>
@@ -24,25 +25,37 @@
     <section class="cards">
       <a href="/src/pages/student/profile.html">
         <div class="card">
-        <h4>Profile</h4>
+          <div class="card_headline">
+            <i class="material-icons">person</i>
+            <h4>Profile</h4>
+          </div>
         <p>View and update your profile details.</p>
       </div>
       </a>
 
       <a href="/src/pages/student/result.html">
         <div class="card">
-        <h4>Results</h4>
+          <div class="card_headline">
+            <i class="material-icons">assessment</i>
+            <h4>Results</h4>
+          </div>
         <p>Check your academic performance.</p>
       </div>
       </a>
 
       <div class="card">
-        <h4>Courses</h4>
+        <div class="card_headline">
+          <i class="material-icons">school</i>
+          <h4>Courses</h4>
+        </div>
         <p>See the list of registered courses.</p>
       </div>
 
       <div class="card">
-        <h4>Payments</h4>
+        <div class="card_headline">
+          <i class="material-icons">payment</i>
+          <h4>Payments</h4>
+        </div>
         <p>View your payment history.</p>
       </div>
     </section>

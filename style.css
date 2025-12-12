@@ -73,6 +73,8 @@ header {
   font-size: 14px;
 }
 
+a{ text-decoration: none; }
+
 nav ul {
   display: flex;
   list-style: none;

@@ -13,15 +13,34 @@
 
 body {
   background: var(--bg-light);
+  transition: all 0.5s ease;
 }
 
 /* Header */
 header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: var(--blue);
-  padding: 15px 20px;
+  padding: 15px 1.5px 15px 20px;
   text-align: center;
   color: white;
   box-shadow: 0 4px 15px rgba(26, 58, 122, 0.3);
+}
+
+.logout-btn{
+  display: flex;
+  border: none;
+  border-radius: 20px 0 0 20px;
+  padding: 5px 0 5px 10px;
+  background: linear-gradient(100deg, var(--light-blue), var(--blue));
+  color: var(--bg-light);
+}
+
+.logout-btn span{
+  margin-top: 7%;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
 /* Welcome */
@@ -57,14 +76,26 @@ header {
   transition: 0.3s ease;
 }
 
-.card h4 {
+.card_headline{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 4px;
   margin-bottom: 8px;
+}
+
+.card_headline{
+  color: var(--light-blue);
+}
+
+.card h4 {
   color: var(--blue);
+  margin-bottom: -6px;
 }
 
 .card p {
   color: #333;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 /* Hover Effect */

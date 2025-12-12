@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student-Portal</title>
   <link rel="stylesheet" href="/src/pages/student/studentCSS/profile.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -19,9 +20,18 @@
       </div>
       <div class="menu">
         <ul class="nav__menu">
-          <li><a href="/src/pages/student/dashboard.html">DashBoard</a></li>
-          <li><a href="/src/pages/student/profile.html">Profile</a></li>
-          <li class="last-child"><a href="/src/pages/student/result.html">Results</a></li>
+          <li>
+            <i class="material-icons">dashboard</i>
+            <a href="/src/pages/student/dashboard.html">DashBoard</a></li>
+          <li>
+            <i class="material-icons">person</i>
+            <a href="/src/pages/student/profile.html">Profile</a></li>
+          <li>
+            <i class="material-icons">assessment</i>
+            <a href="/src/pages/student/result.html">Results</a></li>
+          <li>
+            <button class="logout-btn"><span>Logout</span><i class="material-icons">logout</i></button>
+          </li>
         </ul>
         <button class="hamburger">&#9776;</button>
       </div>
@@ -46,7 +56,7 @@
           <p><span>Registration Date: </span><span class="details"></span></p>
           <p><span>ID Number: </span><span class="details"></span></p>
         </div>
-        <button class="update-bio-data">Update Bio Data</button>
+        <button class="update-bio-data btn">Update Bio Data</button>
       </div>
       <div class="line"></div>
       <div class="bio-data">
@@ -145,14 +155,14 @@
           <input type="text" inputmode="numeric" id="contact" placeholder=" ">
           <label for="contact">Contact</label>
         </div>
-        <button class="update">update Profile</button>
+        <button class="update btn">update Profile</button>
       </form>
     </div>
 
     <div class="users-result"></div>
   </main>
-  <footer>
-    <p>&copy; 2005</p>
+  <footer class="footer">
+    &copy; 2023 School Profile Page | All Rights Reserved
   </footer>
   <script type="module" src="/src/js/students/main.js"></script>
   <script src="/src/pages/student/studentJS/profile.js"></script>

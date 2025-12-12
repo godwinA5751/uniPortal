@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student-Portal</title>
   <link rel="stylesheet" href="/src/pages/student/studentCSS/result.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -19,9 +20,18 @@
       </div>
       <div class="menu">
         <ul class="nav__menu">
-          <li><a href="/src/pages/student/dashboard.html">DashBoard</a></li>
-          <li><a href="/src/pages/student/profile.html">Profile</a></li>
-          <li class="last-child"><a href="/src/pages/student/result.html">Results</a></li>
+          <li>
+            <i class="material-icons">dashboard</i>
+            <a href="/src/pages/student/dashboard.html">DashBoard</a></li>
+          <li>
+            <i class="material-icons">person</i>
+            <a href="/src/pages/student/profile.html">Profile</a></li>
+          <li>
+            <i class="material-icons">assessment</i>
+            <a href="/src/pages/student/result.html">Results</a></li>
+          <li >
+            <button class="logout-btn"><span>Logout</span><i class="material-icons">logout</i></button>
+          </li>
         </ul>
         <button class="hamburger">&#9776;</button>
       </div>
@@ -96,7 +106,7 @@
       </table>
   </main>
   <footer class="footer">
-    © 2025 School Results Portal | All Rights Reserved
+    &copy; 2025 School Results Page | All Rights Reserved
   </footer>
   <script type="module" src="/src/js/students/main.js"></script>
 </body>

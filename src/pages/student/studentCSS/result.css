@@ -102,6 +102,8 @@ a{
   list-style: none;
 }
 
+li i{ color: var(--primary-bg);}
+
 .nav__menu li a {
   position: relative;
   text-decoration: none;
@@ -139,21 +141,6 @@ a{
   transform-origin: left;
 }
 
-/* Dark mode button */
-.modes {
-  border: none;
-  background: none;
-  cursor: pointer;
-  color: var(--light-blue);
-  font-size: 1.5rem;
-  padding: 5px;
-  border-radius: 50%;
-  transition: var(--transition);
-}
-
-.modes:hover {
-  background: rgba(0, 0, 0, 0.1);
-}
 
 /* Mobile /* Hamburger button */
 .hamburger {
@@ -267,11 +254,29 @@ table tr:nth-child(even) {
     text-align: center;
     width: 100%;
     box-shadow: inset 0 0 10px var(--light-blue);
-    padding: 20px 10px;
+    padding: 15px 0;
   }
 
-  .last-child{
+  li:last-child{
     border-radius: 0 0 10px 10px;
+    padding: 0px;
+  }
+  
+  .logout-btn {
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    padding: 15px;
+    box-shadow: inset 0 0 10px var(--light-blue);
+    background: transparent;
+    border: none;
+    color: var(--primary-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logout-btn span{
+    font-size: 14px;
   }
 
   .nav__menu li a {
