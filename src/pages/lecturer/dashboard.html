@@ -9,36 +9,38 @@
 </head>
 
 <body>
-  <header>
-    <h2>Lecturer Dashboard</h2>
-    <button class="logout-btn">Logout</button>
-  </header>
 
-  <main>
-    <section class="cards">
-      <a href="courses.html">
-        <div class="card">
-          <h4>Assigned Courses</h4>
-          <p>View all assigned courses.</p>
-        </div>
-      </a>
+  <div class="body">
+    <header>
+      <h2>Lecturer Dashboard</h2>
+      <button class="logout-btn">Logout</button>
+    </header>
 
-      <a href="upload.html">
-        <div class="card">
-          <h4>Upload Scores</h4>
-          <p>Upload student scores.</p>
-        </div>
-      </a>
+    <main>
+      <section class="cards">
+        <a href="courses.html">
+          <div class="card">
+            <h4>Assigned Courses</h4>
+            <p>View all assigned courses.</p>
+          </div>
+        </a>
 
-      <a href="edit.html">
-        <div class="card">
-          <h4>Edit Results</h4>
-          <p>Edit previously uploaded student scores.</p>
-        </div>
-      </a>
-    </section>
-  </main>
+        <a href="upload.html">
+          <div class="card">
+            <h4>Upload Scores</h4>
+            <p>Upload student scores.</p>
+          </div>
+        </a>
 
+        <a href="edit.html">
+          <div class="card">
+            <h4>Edit Results</h4>
+            <p>Edit previously uploaded student scores.</p>
+          </div>
+        </a>
+      </section>
+    </main>
+  </div>
   <script>
     // Redirect to login if not logged in
     if (localStorage.getItem("lecturerLoggedIn") !== "true") {

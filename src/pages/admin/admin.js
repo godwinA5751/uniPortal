@@ -12,7 +12,7 @@ function setData(key, data) {
 // CONFIG: Update login keys
 // ------------------------
 
- const adminKey = "adminLoggedIn"
+const adminKey = "adminLoggedIn"
 
 // ------------------------
 // CHECK LOGIN FUNCTION
@@ -80,7 +80,10 @@ function handleFormSubmit(formId, key, inputIds, tableId) {
     data.push(newItem);
     setData(key, data);
     renderTable(key, tableId, inputIds);
+    document.querySelector('.course-table').classList.add('table');
+
   });
+
 }
 
 // ===== Edit Item =====
@@ -105,4 +108,7 @@ function deleteItem(key, index, tableId, fields) {
   data.splice(index, 1);
   setData(key, data);
   renderTable(key, tableId, fields);
+  if (data.length === 0) {
+    document.querySelector('.course-table').classList.remove('table');
+  }
 }

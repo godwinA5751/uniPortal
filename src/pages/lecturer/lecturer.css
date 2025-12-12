@@ -1,16 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   --blue: #1a3a7a;
   --light-blue: #4da3ff;
   --bg-light: #e8f1ff;
 }
 
-body {
+body{
   background: var(--bg-light);
+  transition: all 0.5s ease;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.back {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: var(--bg-light);
+  padding: 5px 0;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 0 0 10px 0;
+  width: 80px;
+  background: linear-gradient(100deg, var(--bg-light), var(--blue));
+}
+
+.body {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-family: "Segoe UI", sans-serif;
+  width: 90%;
+  padding: 20px;
+}
+
+.flex {
+  flex-direction: column;
+  width: 100%;
 }
 
 .login-container {
@@ -69,7 +99,7 @@ button:hover {
 
 header {
   background: var(--blue);
-  padding: 15px;
+  padding: 40px;
   text-align: center;
   color: white;
 }
@@ -85,7 +115,7 @@ header {
 .card {
   background: white;
   border-left: 5px solid var(--light-blue);
-  padding: 20px;
+  padding: 50px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(26, 58, 122, 0.2);
   text-align: center;
@@ -103,3 +133,9 @@ header {
 }
 
 a { text-decoration: none; }
+
+@media screen and (max-width: 600px) {
+  .card{
+    padding: 30px;
+  }
+}

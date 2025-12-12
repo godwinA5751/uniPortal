@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Results</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/src/pages/lecturer/lecturer.css">
 </head>
+
 <body>
-  <header>
-    <h2>Edit Results</h2>
-  </header>
+  <a class="back" href="dashboard.html">
+    <i class="material-icons">arrow_back</i>
+    <span>Back</span>
+  </a>
 
-  <main>
-    <label for="edit-course">Select Course:</label>
-    <select id="edit-course">
-      <option value="">--Select--</option>
-      <option value="Math101">Math 101</option>
-      <option value="Eng201">English 201</option>
-      <option value="CS301">Computer Science 301</option>
-    </select>
+  <div class="body flex">
+    <header>
+      <h2>Edit Results</h2>
+    </header>
 
-    <div id="edit-students-container"></div>
-    <button id="save-edits">Save Changes</button>
-  </main>
+    <main>
+      <label for="edit-course">Select Course:</label>
+      <select id="edit-course">
+        <option value="">--Select--</option>
+        <option value="Math101">Math 101</option>
+        <option value="Eng201">English 201</option>
+        <option value="CS301">Computer Science 301</option>
+      </select>
+
+      <div id="edit-students-container"></div>
+      <button id="save-edits">Save Changes</button>
+    </main>
+  </div>
 
   <script src="edit.js"></script>
 </body>
+
 </html>

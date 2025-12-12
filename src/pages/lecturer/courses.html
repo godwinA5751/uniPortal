@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Assigned Courses</title>
   <link rel="stylesheet" href="/src/pages/lecturer/lecturer.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <h2>Assigned Courses</h2>
-  </header>
 
-  <main>
-    <ul id="course-list"></ul>
-  </main>
+<body>
+
+  <a class="back" href="dashboard.html">
+    <i class="material-icons">arrow_back</i>
+    <span>Back</span>
+  </a>
+
+  <div class="body flex">
+    <header>
+      <h2>Assigned Courses</h2>
+    </header>
+
+    <main>
+      <ul id="course-list"></ul>
+    </main>
+  </div>
 
   <script>
     if (localStorage.getItem("lecturerLoggedIn") !== "true") {
@@ -31,4 +42,5 @@
     });
   </script>
 </body>
+
 </html>

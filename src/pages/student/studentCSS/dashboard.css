@@ -18,18 +18,27 @@ body {
 
 /* Header */
 header {
+  width: 100%;
+  color: white;
+  box-shadow: 0 4px 15px rgba(26, 58, 122, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--blue);
+}
+
+nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--blue);
   padding: 15px 1.5px 15px 20px;
   text-align: center;
-  color: white;
-  box-shadow: 0 4px 15px rgba(26, 58, 122, 0.3);
 }
 
 .logout-btn{
   display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   border-radius: 20px 0 0 20px;
   padding: 5px 0 5px 10px;
@@ -38,7 +47,6 @@ header {
 }
 
 .logout-btn span{
-  margin-top: 7%;
   font-size: 0.8rem;
   font-weight: bold;
 }
