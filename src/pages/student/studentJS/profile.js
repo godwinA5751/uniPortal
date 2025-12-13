@@ -91,7 +91,7 @@ updatebtn.addEventListener('click', () => {
 function updateProfileData(data) {
   profileContact.innerHTML = data.contact;
   updateedBioData.innerHTML = `
-    <p>ID: <span>${data.ID}</span></p>
+    <p>ID: <span class="in-id">${data.ID}</span></p>
     <p>Surname: <span>${data.surname}</span></p>
     <p>First Name: <span>${data.firstname}</span></p>
     <p>Other Name: <span>${data.othername}</span></p>
@@ -143,6 +143,7 @@ window.addEventListener('load', () => {
   if (userData) {
     profileName.innerHTML = `${userData.firstName} ${userData.otherName} ${userData.lastName}`;
     id.innerHTML = userData.id;
+    document.querySelector('.in-id').innerHTML = userData.id;
     ID.value = userData.id;
     surName.value = userData.lastName;
     firstName.value = userData.firstName;

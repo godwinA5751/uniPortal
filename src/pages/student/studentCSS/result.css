@@ -100,6 +100,7 @@ a{
   background: linear-gradient(100deg, var(--light-blue), var(--blue));
   cursor: pointer;
   color: var(--primary-bg);
+  box-shadow: 0 0 10px var(--light-blue);
 }
 
 .logout-btn span{
@@ -119,12 +120,10 @@ a{
   list-style: none;
 }
 
-li i{ color: var(--primary-bg);}
-
 .nav__menu li a {
   position: relative;
   text-decoration: none;
-  color: var(--light-blue);
+  color: var(--primary-bg);
   font-weight: 500;
   padding: 5px 0;
   transition: var(--transition);
@@ -216,7 +215,7 @@ body {
 }
 
 table {
-  width: 40%;
+  width: 55%;
   border-collapse: collapse;
   margin: 15px auto;
 }
@@ -303,6 +302,14 @@ table tr:nth-child(even) {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1024px) {
+  table{ width: 70%;}
+}
+
+@media screen and (max-width: 800px) {
+  table{ width: 80%;}
+}
+
+@media screen and (max-width: 678px) {
   table{ width: 90%;}
 }

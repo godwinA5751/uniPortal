@@ -50,6 +50,7 @@ header {
   background: linear-gradient(100deg, var(--light-blue), var(--blue));
   color: var(--bg-light);
   cursor: pointer;
+  box-shadow: 0 0 10px var(--light-blue);
 }
 
 .logout-btn span{
