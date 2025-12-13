@@ -29,3 +29,18 @@ loginForm.addEventListener("submit", (e) => {
     errorMsg.textContent = "Invalid username or password";
   }
 });
+
+  const passwordInput = document.getElementById('password');
+  const togglePasswordIcon = document.getElementById('toggle-password');
+  
+  const toggleConfirmPasswordIcon = document.getElementById('toggle-confirm-password');
+  
+  togglePasswordIcon.addEventListener('click', () => {
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      togglePasswordIcon.className = 'fa-solid fa-eye-slash toggle-password';
+    } else {
+      passwordInput.type = 'password';
+      togglePasswordIcon.className = 'fa-solid fa-eye toggle-password';
+    }
+  });

@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <link rel="stylesheet" href="student-login.css">
 </head>
 
@@ -23,7 +25,10 @@
     <h2>Student Login</h2>
     <form id="student-login-form">
       <input type="text" id="username" placeholder="ID Number" required>
-      <input type="password" id="password" placeholder="Password" required>
+      <div class="password-container">
+        <input type="password" id="password" placeholder="Password">
+        <i class="fa-solid fa-eye toggle-password" id="toggle-password"></i>
+      </div>
       <button type="submit">Login</button>
       <p id="error-msg"></p>
       <p class="signup">

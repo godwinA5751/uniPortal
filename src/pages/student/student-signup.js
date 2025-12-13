@@ -33,9 +33,9 @@ form.addEventListener('submit', (e) => {
   
   messageDiv.style.display = 'block';
   messageEl.innerHTML = 'Signup successful!';
-  idEl.innerHTML = `Your Student ID is: <strong>${id}</strong>`;
+  idEl.innerHTML = `Use Student ID <strong>${id}</strong> to Log-in`;
   
-  const redirectTime = 5000; // adjust this to match your desired redirect time
+  const redirectTime = 6000; // adjust this to match your desired redirect time
   const redirectPromise = new Promise((resolve) => {
     setTimeout(() => {
       resolve();
@@ -53,3 +53,30 @@ form.addEventListener('submit', (e) => {
 function generateUUID() {
   return Math.floor(10000 + Math.random() * 90000)
 }
+
+
+
+const togglePasswordIcon = document.getElementById('toggle-password');
+
+const toggleConfirmPasswordIcon = document.getElementById('toggle-confirm-password');
+
+togglePasswordIcon.addEventListener('click', () => {
+  if (passwordInput.type === 'password') {
+    passwordInput.type = 'text';
+    togglePasswordIcon.className = 'fa-solid fa-eye-slash toggle-password';
+  } else {
+    passwordInput.type = 'password';
+    togglePasswordIcon.className = 'fa-solid fa-eye toggle-password';
+  }
+});
+
+
+toggleConfirmPasswordIcon.addEventListener('click', () => {
+  if (confirmPasswordInput.type === 'password') {
+    confirmPasswordInput.type = 'text';
+    toggleConfirmPasswordIcon.className = 'fa-solid fa-eye-slash toggle-password';
+  } else {
+    confirmPasswordInput.type = 'password';
+    toggleConfirmPasswordIcon.className = 'fa-solid fa-eye toggle-password';
+  }
+});

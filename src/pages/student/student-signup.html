@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="student-login.css">
 </head>
 
@@ -26,12 +27,19 @@
       <input type="text" id="first-name" placeholder="First Name" required>
       <input type="text" id="other-name" placeholder="Other Name">
       <input type="text" id="last-name" placeholder="Last Name" required>
-      <input type="password" id="password" placeholder="Password" required>
-      <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+      <div class="password-container">
+        <input type="password" id="password" placeholder="Password">
+        <i class="fa-solid fa-eye toggle-password" id="toggle-password"></i>
+      </div>
+      <div class="password-container">
+        <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+        <i class="fa-solid fa-eye toggle-password" id="toggle-confirm-password"></i>
+      </div>
       <button type="submit">Signup</button>
       <p id="error-msg"></p>
     </form>
   </div>
+
 
   <script src="student-signup.js"></script>
 </body>
