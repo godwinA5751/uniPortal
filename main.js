@@ -40,20 +40,3 @@ function closeMobileMenu() {
 };
 
 setupMobileMenu();
-
-const slider = document.querySelector('.slider');
-const slides = document.querySelector('.slides');
-const images = document.querySelectorAll('.slides img');
-
-let index = 0;
-let interval = 2000; // adjust interval to your needs (in milliseconds)
-
-function slide() {
-  index++;
-  if (index >= images.length) {
-    index = 0;
-  }
-  slides.style.transform = `translateX(${-index * 100}%)`;
-}
-
-setInterval(slide, interval);

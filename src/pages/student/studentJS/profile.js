@@ -1,3 +1,5 @@
+
+
 const updateData = document.querySelector('.update-bio-data');
 const userProfile = document.querySelector('.users-profile');
 const updateProfile = document.querySelector('.updateprofile');
@@ -25,6 +27,9 @@ const blood = document.querySelector('#blood');
 const genotype = document.querySelector('#genotype');
 const home = document.querySelector('#home');
 const contact = document.querySelector('#contact');
+const profileName = document.querySelector('.name')
+const id = document.querySelector('.id')
+
 
 // Profile display elements
 const profileContact = document.querySelector('.Phone');
@@ -34,11 +39,10 @@ const imageInput = document.querySelector('#file');
 // ------------------------------
 // SAVE EVERYTHING ON UPDATE
 // ------------------------------
+// Save user data
 updatebtn.addEventListener('click', () => {
-  userProfile.classList.remove('hide');
-  updateProfile.style.display = 'none';
-
-  // Save biodata as an object
+  const file = imageInput.files[0];
+  const reader = new FileReader();
   const savedData = {
     ID: ID.value,
     surname: surName.value,
@@ -54,55 +58,62 @@ updatebtn.addEventListener('click', () => {
     blood: blood.value,
     genotype: genotype.value,
     home: home.value,
-    contact: contact.value
+    contact: contact.value,
   };
 
-  localStorage.setItem('bioData', JSON.stringify(savedData));
-
-  profileContact.innerHTML = contact.value;
-
-  // Handle image saving
-  const file = imageInput.files[0];
   if (file) {
-    const reader = new FileReader();
     reader.onload = () => {
-      profileImage.src = reader.result;
-
-      // Save image to localStorage
-      localStorage.setItem("savedImage", reader.result);
+      savedData.image = reader.result;
+      localStorage.setItem('bioData', JSON.stringify(savedData));
+      profileImage.src = savedData.image;
+      updateProfileData(savedData);
     };
     reader.readAsDataURL(file);
+  } else {
+    const stored = localStorage.getItem('bioData');
+    if (stored) {
+      const data = JSON.parse(stored);
+      savedData.image = data.image;
+    }
+    localStorage.setItem('bioData', JSON.stringify(savedData));
+    updateProfileData(savedData);
   }
 
-  // BUILD DISPLAYED BIODATA
-  updateedBioData.innerHTML = `
-    <p>ID: <span>${savedData.ID}</span></p>
-    <p>Surname: <span>${savedData.surname}</span></p>
-    <p>First Name: <span>${savedData.firstname}</span></p>
-    <p>Other Name: <span>${savedData.othername}</span></p>
-    <p>Gender: <span>${savedData.gender}</span></p>
-    <p>Date of Birth: <span>${savedData.dob}</span></p>
-    <p>Country: <span>${savedData.country}</span></p>
-    <p>State of Origin: <span>${savedData.origin}</span></p>
-    <p>LGA of Origin: <span>${savedData.lga}</span></p>
-    <p>Marital Status: <span>${savedData.martStatus}</span></p>
-    <p>Religion: <span>${savedData.religion}</span></p>
-    <p>Blood Group: <span>${savedData.blood}</span></p>
-    <p>Genotype: <span>${savedData.genotype}</span></p>
-    <p>Home Address: <span>${savedData.home}</span></p>
-    <p>Contact Address: <span>${savedData.contact}</span></p>
-  `;
+  userProfile.classList.remove('hide');
+  updateProfile.style.display = 'none';
 });
 
-// ------------------------------
-// LOAD EVERYTHING ON PAGE LOAD
-// ------------------------------
+// Update profile data
+function updateProfileData(data) {
+  profileContact.innerHTML = data.contact;
+  updateedBioData.innerHTML = `
+    <p>ID: <span>${data.ID}</span></p>
+    <p>Surname: <span>${data.surname}</span></p>
+    <p>First Name: <span>${data.firstname}</span></p>
+    <p>Other Name: <span>${data.othername}</span></p>
+    <p>Gender: <span>${data.gender}</span></p>
+    <p>Date of Birth: <span>${data.dob}</span></p>
+    <p>Country: <span>${data.country}</span></p>
+    <p>State of Origin: <span>${data.origin}</span></p>
+    <p>LGA of Origin: <span>${data.lga}</span></p>
+    <p>Marital Status: <span>${data.martStatus}</span></p>
+    <p>Religion: <span>${data.religion}</span></p>
+    <p>Blood Group: <span>${data.blood}</span></p>
+    <p>Genotype: <span>${data.genotype}</span></p>
+    <p>Home Address: <span>${data.home}</span></p>
+    <p>Contact Address: <span>${data.contact}</span></p>
+  `;
+  if (data.image) {
+    profileImage.src = data.image;
+  }
+}
+
+// Load user data
 window.addEventListener('load', () => {
   const stored = localStorage.getItem('bioData');
-
+  const userData = JSON.parse(sessionStorage.getItem("userData"));
   if (stored) {
     const data = JSON.parse(stored);
-
     ID.value = data.ID;
     surName.value = data.surname;
     firstName.value = data.firstname;
@@ -118,37 +129,19 @@ window.addEventListener('load', () => {
     genotype.value = data.genotype;
     home.value = data.home;
     contact.value = data.contact;
-
     profileContact.innerHTML = data.contact;
-
-    updateedBioData.innerHTML = `
-      <p>ID: <span>${data.ID}</span></p>
-      <p>Surname: <span>${data.surname}</span></p>
-      <p>First Name: <span>${data.firstname}</span></p>
-      <p>Other Name: <span>${data.othername}</span></p>
-      <p>Gender: <span>${data.gender}</span></p>
-      <p>Date of Birth: <span>${data.dob}</span></p>
-      <p>Country: <span>${data.country}</span></p>
-      <p>State of Origin: <span>${data.origin}</span></p>
-      <p>LGA of Origin: <span>${data.lga}</span></p>
-      <p>Marital Status: <span>${data.martStatus}</span></p>
-      <p>Religion: <span>${data.religion}</span></p>
-      <p>Blood Group: <span>${data.blood}</span></p>
-      <p>Genotype: <span>${data.genotype}</span></p>
-      <p>Home Address: <span>${data.home}</span></p>
-      <p>Contact Address: <span>${data.contact}</span></p>
-    `;
+    if (data.image) {
+      profileImage.src = data.image;
+    }
+    updateProfileData(data);
   }
 
-  // ------------------------------------
-  // SAFE DEFAULT + LOAD SAVED IMAGE
-  // ------------------------------------
-  const savedImage = localStorage.getItem("savedImage");
-
-  if (savedImage) {
-    profileImage.src = savedImage;
-  } else {
-    // Set your fallback image here
-    profileImage.src = "/src/images/default-profile.png";
+  if (userData) {
+    profileName.innerHTML = `${userData.firstName} ${userData.otherName} ${userData.lastName}`;
+    id.innerHTML = userData.id;
+    ID.value = userData.id;
+    surName.value = userData.lastName;
+    firstName.value = userData.firstName;
+    otherName.value = userData.otherName;
   }
 });

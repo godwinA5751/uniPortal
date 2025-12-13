@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Login</title>
   <link rel="stylesheet" href="student-login.css">
 </head>
+
 <body>
+
+  <div class="message-container">
+    <div class="message-container-box">
+      <h3>Login Successful</h3>
+      <i>
+        Redirecting to Student Dashboard<span class="load"><span></span><span></span><span></span></span>
+      </i>
+    </div>
+  </div>
 
   <div class="login-container">
     <h2>Student Login</h2>
     <form id="student-login-form">
-      <input type="text" id="username" placeholder="Username" required>
+      <input type="text" id="username" placeholder="ID Number" required>
       <input type="password" id="password" placeholder="Password" required>
       <button type="submit">Login</button>
       <p id="error-msg"></p>
@@ -20,4 +31,5 @@
 
   <script src="student-login.js"></script>
 </body>
+
 </html>

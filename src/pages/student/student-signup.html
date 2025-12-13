@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Login</title>
+  <link rel="stylesheet" href="student-login.css">
+</head>
+
+<body>
+
+  <div class="message-container">
+    <div class="message-container-box">
+      <h3 class="message"></h3>
+      <p class="id"></p>
+      <i>
+        Redirecting to login<span class="load"><span></span><span></span><span></span></span>
+      </i>
+    </div>
+  </div>
+
+  <div class="login-container">
+    <h2>Student Signup</h2>
+    <form id="student-login-form">
+      <input type="text" id="first-name" placeholder="First Name" required>
+      <input type="text" id="other-name" placeholder="Other Name">
+      <input type="text" id="last-name" placeholder="Last Name" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+      <button type="submit">Signup</button>
+      <p id="error-msg"></p>
+    </form>
+  </div>
+
+  <script src="student-signup.js"></script>
+</body>
+
+</html>
