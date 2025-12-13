@@ -12,7 +12,6 @@ form.addEventListener('submit', (e) => {
   const lastName = lastNameInput.value;
   const password = passwordInput.value;
   const confirmPassword = confirmPasswordInput.value;
-  
   const messageDiv = document.querySelector('.message-container');
   const messageEl = document.querySelector('.message');
   const idEl = document.querySelector('.id');
@@ -27,14 +26,7 @@ form.addEventListener('submit', (e) => {
   }
   
   const id = generateUUID();
-  const user = {
-    id,
-    firstName,
-    otherName,
-    lastName,
-    password
-  };
-  
+  const user = { id, firstName, otherName, lastName, password };
   const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
   storedUsers.push(user);
   localStorage.setItem('users', JSON.stringify(storedUsers));
@@ -43,10 +35,17 @@ form.addEventListener('submit', (e) => {
   messageEl.innerHTML = 'Signup successful!';
   idEl.innerHTML = `Your Student ID is: <strong>${id}</strong>`;
   
-  setTimeout(() => {
+  const redirectTime = 5000; // adjust this to match your desired redirect time
+  const redirectPromise = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, redirectTime);
+  });
+  
+  redirectPromise.then(() => {
     messageDiv.style.display = 'none';
     window.location.href = 'student-login.html';
-  }, 5000);
+  });
   
   form.reset();
 })
