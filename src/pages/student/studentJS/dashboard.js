@@ -1,17 +1,11 @@
-function displayUserData() {
-  const userData = JSON.parse(sessionStorage.getItem("userData"));
-  if (userData) {
-    const nameElement = document.querySelector(".name");
-    if (nameElement) {
-      nameElement.innerHTML = `${userData.firstName}`;
-    } else {
-      // Handle the case where user data is not found
-      window.location.href = "student-login.html";
-    }
-  } else {
-    // Handle the case where user data is not found
+window.addEventListener("load", () => {
+  if (sessionStorage.getItem("studentLoggedIn") !== "true") {
     window.location.href = "student-login.html";
   }
-}
-
-displayUserData();
+  const userData = JSON.parse(sessionStorage.getItem("userData"));
+  console.log(userData);
+  if (userData) {
+    const welcomeMessage = document.querySelector('.name');
+    welcomeMessage.innerHTML = `Welcome, ${userData.firstName}`;
+  }
+});
