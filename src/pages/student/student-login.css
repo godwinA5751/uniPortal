@@ -59,6 +59,23 @@ body {
   background: var(--light-blue);
 }
 
+.signup{
+  margin-top: 15px;
+  color: var(--blue);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  font-size: 15px;
+}
+
+.signup>span a{
+  text-decoration: none;
+  color: var(--blue);
+  font-weight: bold;
+}
+
 .message-container {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
