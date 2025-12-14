@@ -1,6 +1,4 @@
 
-
-
 // Mobile Menu Toggle
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const mainNav = document.getElementById('mainNav');
@@ -40,3 +38,38 @@ function closeMobileMenu() {
 };
 
 setupMobileMenu();
+
+const textElement = document.getElementById('text');
+const texts = [
+  'Welcome to UniPortal!',
+  'Where knowledge meets innovation.',
+  'Empowering minds, shaping futures.',
+  'Learn, grow, and succeed with us.'
+];
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+const typingSpeed = 70;
+const deletingSpeed = 50;
+
+function typeText() {
+  const currentText = texts[textIndex];
+  if (isDeleting) {
+    textElement.innerText = currentText.substring(0, charIndex--);
+    if (charIndex < 0) {
+      isDeleting = false;
+      textIndex = (textIndex + 1) % texts.length;
+    }
+    setTimeout(typeText, deletingSpeed);
+  } else {
+    textElement.innerText = currentText.substring(0, charIndex++);
+    if (charIndex > currentText.length) {
+      isDeleting = true;
+      setTimeout(typeText, 1000); // wait for 1 second before deleting
+      return;
+    }
+    setTimeout(typeText, typingSpeed);
+  }
+}
+typeText();

@@ -4,6 +4,7 @@ const otherNameInput = document.querySelector('#other-name')
 const lastNameInput = document.querySelector('#last-name')
 const passwordInput = document.querySelector('#password')
 const confirmPasswordInput = document.querySelector('#confirm-password')
+const loginBox = document.querySelector('.login-container')
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -31,7 +32,8 @@ form.addEventListener('submit', (e) => {
   storedUsers.push(user);
   localStorage.setItem('users', JSON.stringify(storedUsers));
   
-  messageDiv.style.display = 'block';
+  loginBox.style.display = 'none'
+  messageDiv.style.display = 'flex';
   messageEl.innerHTML = 'Signup successful!';
   idEl.innerHTML = `Use Student ID <strong>${id}</strong> to Log-in`;
   
@@ -44,6 +46,7 @@ form.addEventListener('submit', (e) => {
   
   redirectPromise.then(() => {
     messageDiv.style.display = 'none';
+    loginBox.style.display = 'block'
     window.location.href = 'student-login.html';
   });
   

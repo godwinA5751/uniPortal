@@ -1,5 +1,7 @@
 const loginForm = document.getElementById("student-login-form");
 const errorMsg = document.getElementById("error-msg");
+const loginBox = document.querySelector('.login-container')
+
 
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -10,6 +12,7 @@ loginForm.addEventListener("submit", (e) => {
   const user = storedUsers.find((u) => u.id.toString() === username && u.password === password);
   
   if (user) {
+    loginBox.style.display = 'none'
     messageDiv.style.display = 'flex';
     const loadingTime = 3000; // adjust this to match your loading phase duration
     
@@ -23,6 +26,8 @@ loginForm.addEventListener("submit", (e) => {
     sessionStorage.setItem("userData", JSON.stringify(user));
     
     loadPromise.then(() => {
+      messageDiv.style.display = 'none';
+      loginBox.style.display = 'block'
       window.location.href = "dashboard.html";
     });
   } else {
