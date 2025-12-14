@@ -9,8 +9,8 @@ loginForm.addEventListener("submit", (e) => {
   const password = document.getElementById("password").value.trim();
   const messageDiv = document.querySelector('.message-container');
   const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
-  const user = storedUsers.find((u) => u.id.toString() === username && u.password === password);
-  
+  console.log(storedUsers)
+  const user = storedUsers.find((u) => (u.userName && u.userName === username || u.id && u.id.toString() === username) && (u.password === password || u.passwordField === password));
   if (user) {
     loginBox.style.display = 'none'
     messageDiv.style.display = 'flex';
@@ -27,8 +27,8 @@ loginForm.addEventListener("submit", (e) => {
     
     loadPromise.then(() => {
       messageDiv.style.display = 'none';
-      loginBox.style.display = 'block'
       window.location.href = "dashboard.html";
+      loginBox.style.display = 'block'
     });
   } else {
     errorMsg.textContent = "Invalid username or password";

@@ -46,8 +46,8 @@ form.addEventListener('submit', (e) => {
   
   redirectPromise.then(() => {
     messageDiv.style.display = 'none';
-    loginBox.style.display = 'block'
     window.location.href = 'student-login.html';
+    loginBox.style.display = 'block'
   });
   
   form.reset();
