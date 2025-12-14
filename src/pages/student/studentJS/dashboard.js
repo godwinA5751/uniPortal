@@ -3,7 +3,6 @@ window.addEventListener("load", () => {
     window.location.href = "student-login.html";
   }
   const userData = JSON.parse(sessionStorage.getItem("userData"));
-  console.log(userData);
   if (userData) {
     const welcomeMessage = document.querySelector('.name');
     welcomeMessage.innerHTML = `Welcome, ${userData.firstName}`;

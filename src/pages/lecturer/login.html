@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20x%3D%2250%22%20y%3D%2250%22%20font-size%3D%2250%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%E2%86%A9%3C%2Ftext%3E%3C%2Fsvg%3E">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="/src/pages/lecturer/lecturer.css">
 </head>
+
 <body>
   <div class="login-container">
     <h2>Lecturer Login</h2>
@@ -17,13 +20,21 @@
       </div>
       <div class="input-field">
         <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter password" required>
+        <div class="password-container">
+          <input type="password" id="password" placeholder="Enter password" required>
+          <i class="fa-solid fa-eye toggle-password" id="toggle-password"></i>
+        </div>
       </div>
       <button type="submit">Login</button>
     </form>
     <p id="login-error"></p>
+    <p class="direct">
+      <span>Don't have an account?</span>
+      <a href="./signup.html">Signup</a>
+    </p>
   </div>
 
-  <script src="/src/pages/lecturer/lecturer.js"></script>
+  <script src="/src/pages/lecturer/login.js"></script>
 </body>
+
 </html>

@@ -14,7 +14,13 @@
 
   <div class="body">
     <header>
-      <h2>Lecturer Dashboard</h2>
+      <h3 class="name"></h3>
+      <p>
+        <span>Username:</span>
+        <i>
+          <span class="user-name"></span>
+        </i>
+      </p>
       <button class="logout-btn">Logout</button>
     </header>
 
@@ -47,10 +53,17 @@
     </main>
   </div>
   <script>
-    // Redirect to login if not logged in
-    if (localStorage.getItem("lecturerLoggedIn") !== "true") {
-      window.location.href = "login.html";
-    }
+
+    window.addEventListener("load", () => {
+      const users = JSON.parse(localStorage.getItem("users"));
+      const currentUser = users[users.length - 1]; // Get the last user
+      if (currentUser) {
+        const dashboardName = document.querySelector('.name');
+        const userName = document.querySelector('.user-name')
+        dashboardName.innerHTML = `Welcome, ${currentUser.firstName}`;
+        userName.innerHTML = currentUser.userName;
+      }
+    });
     // ------------------------
     // LOGOUT FUNCTION
     // ------------------------
