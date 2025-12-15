@@ -1,6 +1,4 @@
-if (localStorage.getItem("lecturerLoggedIn") !== "true") {
-  window.location.href = "login.html";
-}
+
 
 const editCourseSelect = document.getElementById("edit-course");
 const editStudentsContainer = document.getElementById("edit-students-container");

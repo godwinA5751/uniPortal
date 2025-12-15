@@ -1,6 +1,4 @@
-if (localStorage.getItem("lecturerLoggedIn") !== "true") {
-  window.location.href = "login.html";
-}
+
 
 const courseSelect = document.getElementById("course");
 const studentsContainer = document.getElementById("students-container");
