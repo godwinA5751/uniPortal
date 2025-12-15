@@ -313,3 +313,17 @@ table tr:nth-child(even) {
 @media screen and (max-width: 678px) {
   table{ width: 90%;}
 }
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-only, .print-only * {
+    visibility: visible;
+  }
+  .print-only {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

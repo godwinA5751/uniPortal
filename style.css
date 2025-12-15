@@ -212,6 +212,90 @@ nav ul li a:hover {
   margin-right: auto;
 }
 
+.images{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  margin: 10px;
+  animation: scaling 3s infinite;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 200px;
+}
+
+.images h3{
+  background: transparent;
+  backdrop-filter: blur(5px);
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: var(--light-blue);
+  box-shadow: 0 0 10px var(--light-blue);
+}
+
+.img1{
+  background-image: url('./src/images/image1.jpeg');
+}
+
+.img2 {
+  background-image: url('./src/images/image2.jpeg');
+}
+
+.img3 {
+  background-image: url('./src/images/image3.jpeg');
+}
+
+.img4 {
+  background-image: url('./src/images/image4.jpeg');
+  background-size: 350px;
+}
+
+.img5 {
+  background-image: url('./src/images/image5.jpeg');
+}
+
+.img1 {
+  background-image: url('./src/images/image1.jpeg');
+}
+
+@keyframes scaling{
+  0%{ transform: scale(1); }
+  50%{ transform: scale(1.1); margin: 15px; }
+  100%{ transform: scale(1); }
+}
+
+.images:nth-child(even){ animation-delay: 1.5s;}
+
+.track-container{
+  margin: auto;
+  overflow: hidden;
+  padding: 10px 0;
+  width: 70%;
+}
+
+.track{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
+  animation: marquee 20s linear infinite;
+  width: max-content;
+}
+
+.track:hover{animation-play-state: paused;}
+
+@keyframes marquee{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-51.93%);
+  }
+}
+
 /* Simple Dashboard Cards */
 .dashboards {
   padding: 60px 0;
@@ -395,6 +479,7 @@ footer {
   .typewriter{
     font-size: 18px;
   }
+  .track-container{ width: 100%;}
 }
 
 .sign-up {

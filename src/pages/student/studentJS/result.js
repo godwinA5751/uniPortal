@@ -17,3 +17,10 @@ function displayUserData() {
 }
 
 displayUserData();
+
+function printDiv(divId) {
+  const divToPrint = document.getElementById(divId);
+  divToPrint.classList.add('print-only');
+  window.print();
+  divToPrint.classList.remove('print-only');
+}
