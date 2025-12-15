@@ -73,3 +73,37 @@ function typeText() {
   }
 }
 typeText();
+
+function animateCount(elements, targets, increments) {
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      elements.forEach((element, index) => {
+        let count = 0;
+        const target = targets[index];
+        const increment = increments[index];
+        const interval = setInterval(() => {
+          if (count >= target) {
+            clearInterval(interval);
+            count = target;
+          }
+          element.innerText = count.toLocaleString(); // Format number with commas
+          count += increment;
+        }, 1); // Adjust the speed of the count here
+      });
+      observer.unobserve(entries[0].target); // Stop observing after animation starts
+    }
+  }, {
+    threshold: 0.5, // Trigger when 50% of the element is visible
+  });
+  
+  elements.forEach((element) => {
+    observer.observe(element);
+  });
+}
+
+const element1 = document.getElementById('count1');
+const element2 = document.getElementById('count2');
+const element3 = document.getElementById('count3');
+const element4 = document.getElementById('count4');
+
+animateCount([element1, element2, element3, element4], [5, 25, 15000, 1000], [1, 1, 50, 5]);

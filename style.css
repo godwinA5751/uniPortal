@@ -189,18 +189,20 @@ nav ul li a:hover {
   }
 }
 
-
-/* About Section */
-.about {
-  padding: 60px 0;
+section{
   background-color: var(--light-blue);
 }
+/* About Section */
+.about, #statistics, .contact {
+  padding: 60px 0;
+}
 
-.about-content h2 {
+.about-content h2, #statistics h2 {
   font-size: 2rem;
   color: var(--university-blue);
   margin-bottom: 20px;
   text-align: center;
+  margin-top: 20px;
 }
 
 .about-content p {
@@ -296,6 +298,40 @@ nav ul li a:hover {
   }
 }
 
+.counters-container{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.counter-box{
+  width: 250px;
+  height: 220px;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 10px var(--dark-color);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.counter-box h3{
+  font-size: 2em;
+  color: var(--university-gold);
+  font-weight: bold;
+  text-shadow: 0 0 5px var(--university-gold);
+}
+
+.counter-box p{
+  color: var(--university-blue);
+  font-size: 15px;
+  font-weight: bold;
+}
+
 /* Simple Dashboard Cards */
 .dashboards {
   padding: 60px 0;
@@ -336,10 +372,6 @@ nav ul li a:hover {
 }
 
 /* Contact Section */
-.contact {
-  padding: 60px 0;
-  background-color: var(--light-blue);
-}
 
 .contact-content {
   max-width: 600px;
@@ -480,6 +512,11 @@ footer {
     font-size: 18px;
   }
   .track-container{ width: 100%;}
+  
+  .counters-container{
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3rem;
+  }
 }
 
 .sign-up {
