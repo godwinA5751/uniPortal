@@ -327,3 +327,20 @@ table tr:nth-child(even) {
     top: 0;
   }
 }
+
+.result{ text-align: center; }
+
+.print{
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--light-blue);
+  transition: var(--transition);
+  font-weight: bold;
+}
+.print:hover, .print:focus{
+  border: none;
+  background: var(--blue-gradient);
+  color: var(--primary-bg);
+}

@@ -1,5 +1,5 @@
 function displayUserData() {
-  const userData = JSON.parse(sessionStorage.getItem("userData"));
+  //const userData = JSON.parse(sessionStorage.getItem("userData"));
   if (userData) {
     const nameElement = document.querySelector(".name");
     const idElement = document.querySelector(".id");
@@ -21,6 +21,10 @@ displayUserData();
 function printDiv(divId) {
   const divToPrint = document.getElementById(divId);
   divToPrint.classList.add('print-only');
+  
+  window.onafterprint = function() {
+    divToPrint.classList.remove('print-only');
+  };
+  
   window.print();
-  divToPrint.classList.remove('print-only');
 }
