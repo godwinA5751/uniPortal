@@ -218,13 +218,18 @@ table {
   width: 55%;
   border-collapse: collapse;
   margin: 15px auto;
+  border: 1px solid var(--border-light);
 }
 
 table th,
 table td {
   padding: 10px;
-  border: 1px solid var(--border-light);
   text-align: center;
+}
+
+tfoot td {
+  font-weight: bold;
+  border: 1px solid var(--border-light);
 }
 
 table th {
@@ -234,7 +239,7 @@ table th {
 }
 
 table tr:nth-child(even) {
-  background: var(--primary-bg);
+  background: var(--border-light);
 }
 
 .footer {
@@ -314,6 +319,10 @@ table tr:nth-child(even) {
   table{ width: 90%;}
 }
 
+@media screen and (max-width: 480px) {
+  table{ width: 100%; font-size: 13px;}
+}
+
 @media print {
   body * {
     visibility: hidden;
@@ -344,3 +353,5 @@ table tr:nth-child(even) {
   background: var(--blue-gradient);
   color: var(--primary-bg);
 }
+
+#printableDiv{ margin: 10% auto; text-align: center; }
