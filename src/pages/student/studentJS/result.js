@@ -20,12 +20,10 @@ displayUserData();
 function printDiv(divId) {
   const divToPrint = document.getElementById(divId);
   divToPrint.classList.add('print-only');
-  
-  window.onafterprint = function() {
-    divToPrint.classList.remove('print-only');
-  };
-  
   window.print();
+  setTimeout(() => {
+    divToPrint.classList.remove('print-only');
+  }, 5000);
 }
 
 const results = [
