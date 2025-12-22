@@ -15,6 +15,8 @@ function displayUserData() {
     window.location.href = "student-login.html";
   }
 }
+displayUserData();
+
 function printDiv(divId) {
   const divToPrint = document.getElementById(divId);
   divToPrint.classList.add('print-only');
