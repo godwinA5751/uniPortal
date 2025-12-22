@@ -1,3 +1,6 @@
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+
 function displayUserData() {
   const userData = JSON.parse(sessionStorage.getItem("userData"));
   if (userData) {
@@ -17,14 +20,22 @@ function displayUserData() {
 }
 displayUserData();
 
-function printDiv(divId) {
-  const divToPrint = document.getElementById(divId);
-  divToPrint.classList.add('print-only');
-  window.print();
-  setTimeout(() => {
-    divToPrint.classList.remove('print-only');
-  }, 5000);
-}
+document.getElementById('printButton').addEventListener('click', () => {
+  const doc = new jsPDF();
+  const printableDiv = document.getElementById('printableDiv');
+  html2canvas(printableDiv)
+    .then(canvas => {
+      const imgData = canvas.toDataURL('image/png');
+      const imgWidth = 210; // A4 width in mm
+      const imgHeight = canvas.height * imgWidth / canvas.width;
+      doc.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+      doc.save('table.pdf');
+    })
+    .catch(error => {
+      console.error('Error generating PDF:', error);
+    });
+});
+
 
 const results = [
   {

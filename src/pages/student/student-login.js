@@ -14,7 +14,7 @@ loginForm.addEventListener("submit", (e) => {
   if (user) {
     loginBox.style.display = 'none'
     messageDiv.style.display = 'flex';
-    const loadingTime = 3000; // adjust this to match your loading phase duration
+    const loadingTime = 5000; // adjust this to match your loading phase duration
     
     const loadPromise = new Promise((resolve) => {
       setTimeout(() => {
